@@ -52,19 +52,19 @@ document.addEventListener('DOMContentLoaded', function () {
 			// Use Function to evaluate safely in local scope
 			const result = Function('return ' + currentExpression)();
 			if (result === Infinity || result === -Infinity || Number.isNaN(result)) {
-				updateDisplay('Error');
+				updateDisplay('Error (Invalid Result)');
 				currentExpression = '';
 				return;
 			}
 			currentExpression = String(result);
 			updateDisplay(currentExpression);
 		} catch (err) {
-			updateDisplay('Error');
+			updateDisplay('Error (Invalid Expression)');
 			currentExpression = '';
 		}
 	}
 
-	keysContainer.addEventListener('click', function (e) {
+	keysContainer.addEventListener('click ', function (e) {
 		const target = e.target.closest('button');
 		if (!target) return;
 
