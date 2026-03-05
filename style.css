@@ -1,0 +1,66 @@
+:root{
+	--bg:#f3f6f9;
+	--panel:#ffffff;
+	--primary:#4b7bec;
+	--muted:#9aa6b2;
+	--accent:#2dd4bf;
+	--shadow: 0 6px 18px rgba(36,59,85,0.08);
+	--radius:12px;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+	margin:0;
+	font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+	background:linear-gradient(180deg, var(--bg), #eef3f8);
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	padding:32px;
+}
+.calculator-wrapper{width:320px}
+.title{font-size:18px;color:#233; text-align:center;margin-bottom:12px}
+.calculator{
+	background:var(--panel);
+	border-radius:var(--radius);
+	padding:20px;
+	box-shadow:var(--shadow);
+}
+.display{
+	background:linear-gradient(180deg,#f8fbff,#ffffff);
+	height:64px;
+	border-radius:10px;
+	display:flex;
+	align-items:center;
+	justify-content:flex-end;
+	padding:0 16px;
+	font-size:28px;
+	color:#0b1220;
+	margin-bottom:14px;
+	box-shadow:inset 0 -2px 0 rgba(0,0,0,0.02);
+	overflow:hidden;
+	white-space:nowrap;
+}
+.keys{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.key{
+	background:linear-gradient(180deg,#ffffff,#f3f6f9);
+	border:1px solid rgba(16,24,40,0.04);
+	height:52px;
+	border-radius:10px;
+	font-size:18px;
+	color:#122;
+	cursor:pointer;
+	display:flex;align-items:center;justify-content:center;
+	transition:transform .08s ease, box-shadow .08s ease;
+}
+.key:active{transform:translateY(1px)}
+.key-op{background:linear-gradient(180deg,var(--primary),#3f6fe0);color:#fff;border:none}
+.key-eq{grid-row:4 / span 1;background:var(--accent);color:#032; border:none}
+.key-ac{background:#ffd7d7;color:#7a1f1f;border:none}
+.key-zero{grid-column:1 / span 2}
+.key-blank{background:transparent;border:none}
+.key-back{background:#f1f5f9}
+
+@media (max-width:380px){
+	.calculator-wrapper{width:92vw}
+}
