@@ -29,6 +29,8 @@ document.addEventListener('DOMContentLoaded', function () {
 		updateDisplay(currentExpression);
 	}
 
+	
+
 	function appendOperator(op) {
 		if (!currentExpression) return;
 		// Replace trailing operator with new one
